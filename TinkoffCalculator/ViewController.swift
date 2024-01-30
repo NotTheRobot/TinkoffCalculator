@@ -53,7 +53,11 @@ class ViewController: UIViewController {
                 label.text = buttonText
             }
         } else if(label.text == "Ошибка"){
-            label.text = buttonText
+            if(buttonText == ","){
+                label.text = "0,"
+            }else{
+                label.text = buttonText
+            }
         }
         else{
             label.text?.append(buttonText)
@@ -69,6 +73,15 @@ class ViewController: UIViewController {
         guard let labelText = label.text,
               let labelNumber = numberFormatter.number(from: labelText)?.doubleValue
         else{return}
+        
+        switch calculationHistory.last{
+            case .operation:
+            calculationHistory.removeLast()
+            case .number:
+            break
+            case .none:
+            break
+        }
         
         calculationHistory.append(.number(labelNumber))
         calculationHistory.append(.operation(ButtonOperation))
@@ -97,6 +110,16 @@ class ViewController: UIViewController {
         calculationHistory.removeAll()
     }
     
+    @IBAction func unwindAction(unwindSeque: UIStoryboardSegue){
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "CALCULATIONS_LIST",
+              let calculationsListVC = segue.destination as? CalculationsListViewController else {return}
+        calculationsListVC.result = label.text
+    }
+    
     @IBOutlet weak var label: UILabel!
     
     var calculationHistory: [CalculationHistoryItem] = []
@@ -111,7 +134,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
     }
 
@@ -133,5 +155,9 @@ class ViewController: UIViewController {
         return currentResult
     }
     
+    func memkw() throws -> Double{
+        let operation = Operation(rawValue: "+")
+        return try operation?.calculate(2.0, 3.0) ?? 6.0
+    }
 }
 

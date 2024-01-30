@@ -16,6 +16,7 @@
 		CE3C4CB52B6832D900BBCCE9 /* TinkoffCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C4CB42B6832D900BBCCE9 /* TinkoffCalculatorTests.swift */; };
 		CE3C4CBF2B6832D900BBCCE9 /* TinkoffCalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C4CBE2B6832D900BBCCE9 /* TinkoffCalculatorUITests.swift */; };
 		CE3C4CC12B6832D900BBCCE9 /* TinkoffCalculatorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C4CC02B6832D900BBCCE9 /* TinkoffCalculatorUITestsLaunchTests.swift */; };
+		CEFA4C752B6860B800BB7281 /* CalculationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA4C742B6860B800BB7281 /* CalculationsListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		CE3C4CBA2B6832D900BBCCE9 /* TinkoffCalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinkoffCalculatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE3C4CBE2B6832D900BBCCE9 /* TinkoffCalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinkoffCalculatorUITests.swift; sourceTree = "<group>"; };
 		CE3C4CC02B6832D900BBCCE9 /* TinkoffCalculatorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinkoffCalculatorUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CEFA4C742B6860B800BB7281 /* CalculationsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationsListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		CE3C4C9C2B6832D800BBCCE9 /* TinkoffCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				CEFA4C742B6860B800BB7281 /* CalculationsListViewController.swift */,
 				CE3C4C9D2B6832D800BBCCE9 /* AppDelegate.swift */,
 				CE3C4C9F2B6832D800BBCCE9 /* SceneDelegate.swift */,
 				CE3C4CA12B6832D800BBCCE9 /* ViewController.swift */,
@@ -258,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEFA4C752B6860B800BB7281 /* CalculationsListViewController.swift in Sources */,
 				CE3C4CA22B6832D800BBCCE9 /* ViewController.swift in Sources */,
 				CE3C4C9E2B6832D800BBCCE9 /* AppDelegate.swift in Sources */,
 				CE3C4CA02B6832D800BBCCE9 /* SceneDelegate.swift in Sources */,

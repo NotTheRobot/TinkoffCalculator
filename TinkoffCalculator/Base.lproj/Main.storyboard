@@ -4,8 +4,10 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -138,11 +140,14 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G1r-fT-k5p">
-                                <rect key="frame" x="0.0" y="352.66666666666669" width="322.66666666666669" height="109"/>
-                                <color key="backgroundColor" name="AccentColor"/>
+                                <rect key="frame" x="161.33333333333331" y="352.66666666666669" width="161.33333333333331" height="109"/>
+                                <color key="backgroundColor" systemColor="systemGray3Color"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="C">
+                                    <backgroundConfiguration key="background">
+                                        <color key="strokeColor" systemColor="systemGray3Color"/>
+                                    </backgroundConfiguration>
                                     <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -209,7 +214,7 @@
                                     <action selector="operationButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="idg-NR-kde"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123 123 12" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="jdI-P2-DEZ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="jdI-P2-DEZ">
                                 <rect key="frame" x="20" y="261" width="390" height="71.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="60"/>
                                 <nil key="textColor"/>
@@ -227,13 +232,30 @@
                                     <action selector="calculationButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g19-Nf-H95"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7xJ-a2-JED">
+                                <rect key="frame" x="0.0" y="352.66666666666669" width="161.33333333333334" height="109"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <imageReference key="image" image="clock" catalog="system" symbolScale="large"/>
+                                    <backgroundConfiguration key="background" cornerRadius="0.0">
+                                        <color key="backgroundColor" systemColor="systemGray3Color"/>
+                                    </backgroundConfiguration>
+                                    <color key="baseForegroundColor" systemColor="systemBlueColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="dcX-tD-DIu" kind="show" identifier="CALCULATIONS_LIST" id="6bb-Sv-k2W"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="7xJ-a2-JED" firstAttribute="width" secondItem="G1r-fT-k5p" secondAttribute="width" id="1JJ-PX-kKi"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="leading" secondItem="NFP-fD-eaZ" secondAttribute="leading" id="1o8-oE-gqV"/>
                             <constraint firstItem="BA1-DD-QNz" firstAttribute="leading" secondItem="6hc-jZ-cRs" secondAttribute="trailing" id="2g9-au-did"/>
                             <constraint firstItem="eRl-qj-u0g" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.25" id="6Yg-z0-Ywj"/>
+                            <constraint firstItem="G1r-fT-k5p" firstAttribute="leading" secondItem="7xJ-a2-JED" secondAttribute="trailing" id="6bQ-ru-CbT"/>
                             <constraint firstItem="uYI-C1-Kb0" firstAttribute="leading" secondItem="8WU-Ig-j93" secondAttribute="trailing" id="6t3-az-Y3j"/>
                             <constraint firstItem="mFO-K8-0dO" firstAttribute="top" secondItem="jdI-P2-DEZ" secondAttribute="bottom" constant="20" id="7Fx-6w-Ygl"/>
                             <constraint firstItem="qvh-x7-32Z" firstAttribute="leading" secondItem="eRl-qj-u0g" secondAttribute="trailing" id="7US-TY-Pzd"/>
@@ -262,7 +284,6 @@
                             <constraint firstItem="fyT-ry-8JU" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.25" id="NRI-Rh-jAI"/>
                             <constraint firstItem="pCu-TR-pNY" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.25" id="NY4-Od-pZI"/>
                             <constraint firstItem="pCu-TR-pNY" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="QTR-S0-Ppw"/>
-                            <constraint firstItem="G1r-fT-k5p" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.75" id="SCp-AI-zpN"/>
                             <constraint firstItem="h4d-CC-TZV" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.13" id="TUe-Gm-cEr"/>
                             <constraint firstItem="SXX-6U-9Bv" firstAttribute="bottom" secondItem="fyT-ry-8JU" secondAttribute="bottom" id="U7V-f7-Y6E"/>
                             <constraint firstItem="SXX-6U-9Bv" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.13" id="UQ6-If-yDr"/>
@@ -276,14 +297,16 @@
                             <constraint firstItem="rKf-db-eNM" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.25" id="Y6i-CV-Nf1"/>
                             <constraint firstItem="mFO-K8-0dO" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.13" id="YMi-r9-qZ2"/>
                             <constraint firstItem="h4d-CC-TZV" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.25" id="ZCQ-ya-7zN"/>
+                            <constraint firstItem="7xJ-a2-JED" firstAttribute="height" secondItem="G1r-fT-k5p" secondAttribute="height" id="a5w-6p-ESs"/>
                             <constraint firstItem="pCu-TR-pNY" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.13" id="ajZ-tx-5hY"/>
-                            <constraint firstItem="G1r-fT-k5p" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="as2-SV-ec9"/>
                             <constraint firstItem="NFP-fD-eaZ" firstAttribute="bottom" secondItem="fyT-ry-8JU" secondAttribute="top" id="b6p-DG-AL9"/>
                             <constraint firstItem="6hc-jZ-cRs" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.25" id="bnj-1N-eCj"/>
+                            <constraint firstItem="7xJ-a2-JED" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="c41-XS-PYj"/>
                             <constraint firstItem="BA1-DD-QNz" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.25" id="cpA-Kh-Zct"/>
                             <constraint firstItem="BA1-DD-QNz" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.13" id="csz-I0-AYt"/>
                             <constraint firstItem="BA1-DD-QNz" firstAttribute="bottom" secondItem="fyT-ry-8JU" secondAttribute="bottom" id="ef5-xz-4qe"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jdI-P2-DEZ" secondAttribute="trailing" constant="20" id="h0h-Mt-eBN"/>
+                            <constraint firstItem="G1r-fT-k5p" firstAttribute="bottom" secondItem="7xJ-a2-JED" secondAttribute="bottom" id="j3h-BB-kcX"/>
                             <constraint firstItem="uYI-C1-Kb0" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.25" id="jFg-zN-Wpw"/>
                             <constraint firstItem="W50-Ed-5jw" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.25" id="jTu-gt-vtg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="U5I-Wc-Ih7" secondAttribute="trailing" id="jX6-Dg-AED"/>
@@ -314,13 +337,73 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="heW-dF-HgU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="124.18604651162791" y="-34.763948497854081"/>
         </scene>
+        <!--Calculations List View Controller-->
+        <scene sceneID="2yL-Xp-eoT">
+            <objects>
+                <viewController id="dcX-tD-DIu" customClass="CalculationsListViewController" customModule="TinkoffCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SXY-KZ-KRV">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="922"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9S1-dd-Hys">
+                                <rect key="frame" x="215" y="461" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cod-VN-afl">
+                                <rect key="frame" x="169.66666666666666" y="524.33333333333337" width="90.999999999999972" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Закрыть"/>
+                                <connections>
+                                    <segue destination="heW-dF-HgU" kind="unwind" unwindAction="unwindActionWithUnwindSeque:" id="xvf-yr-gQS"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Результат" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zvs-jO-fWR">
+                                <rect key="frame" x="175.66666666666666" y="395.33333333333331" width="79" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="HNI-q6-iob"/>
+                        <color key="backgroundColor" systemColor="systemGray2Color"/>
+                        <constraints>
+                            <constraint firstItem="9S1-dd-Hys" firstAttribute="centerX" secondItem="SXY-KZ-KRV" secondAttribute="centerX" id="5d8-dR-Vk2"/>
+                            <constraint firstItem="zvs-jO-fWR" firstAttribute="centerX" secondItem="SXY-KZ-KRV" secondAttribute="centerX" id="IWY-Jq-l7U"/>
+                            <constraint firstItem="9S1-dd-Hys" firstAttribute="centerY" secondItem="SXY-KZ-KRV" secondAttribute="centerY" id="Xnq-6w-3Do"/>
+                            <constraint firstItem="cod-VN-afl" firstAttribute="top" secondItem="9S1-dd-Hys" secondAttribute="bottom" constant="63.333333333333314" id="ZnQ-q4-BbI"/>
+                            <constraint firstItem="cod-VN-afl" firstAttribute="centerX" secondItem="SXY-KZ-KRV" secondAttribute="centerX" id="kZD-d2-KWJ"/>
+                            <constraint firstItem="9S1-dd-Hys" firstAttribute="top" secondItem="zvs-jO-fWR" secondAttribute="bottom" constant="44.666666666666686" id="nX4-7z-Ihr"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Pbg-kC-PYk"/>
+                    <connections>
+                        <outlet property="calculationLabel" destination="9S1-dd-Hys" id="uWN-J5-uTU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bPS-PT-9XI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="878" y="-35"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="clock" catalog="system" width="128" height="123"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray3Color">
+            <color red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
