@@ -63,6 +63,15 @@ class ViewController: UIViewController {
             label.text?.append(buttonText)
         }
     }
+    @IBAction func showCalculationsList(_ sender: Any) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let calculationsListVC = sb.instantiateViewController(identifier: "CalculationsListViewController")
+        
+        if let vc = calculationsListVC as? CalculationsListViewController{
+            vc.result = if(label.text!.isEmpty){ "NoData"} else {label.text}
+        }
+        navigationController?.pushViewController(calculationsListVC, animated: true)
+    }
     
     @IBAction func operationButtonPressed(_ sender: UIButton) {
         guard 
@@ -109,16 +118,7 @@ class ViewController: UIViewController {
         }
         calculationHistory.removeAll()
     }
-    
-    @IBAction func unwindAction(unwindSeque: UIStoryboardSegue){
-        
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard segue.identifier == "CALCULATIONS_LIST",
-              let calculationsListVC = segue.destination as? CalculationsListViewController else {return}
-        calculationsListVC.result = label.text
-    }
+
     
     @IBOutlet weak var label: UILabel!
     
@@ -135,6 +135,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
 
     func resetLabelText(){
